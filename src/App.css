@@ -1,0 +1,73 @@
+/*--------------------------------------
+Basic Setup
+--------------------------------------*/
+
+
+.App {
+  background: #002f30; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #002f30 , #00e4e8); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #002f30 , #00e4e8); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  text-align: center;
+}
+
+.fa-snowflake-o {
+  height: 80px;
+  color: #7FFFFF;
+  margin-top: 40px;
+}
+
+h1 {
+  font-size: 150px;
+  font-weight: 200;
+  padding: 30px 0;
+}
+
+h2 {
+
+
+  font-size: 50px;
+  font-weight: 300;
+  padding: 10px 0;
+  margin: 10px 0;
+  color: #fff;
+}
+
+Logo {
+  padding-top: 30px;
+  height: 80px;
+}
+
+span {
+  display: inline-block;
+  width: 200px;
+
+}
+
+
+.Slider {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  width: 50%;
+}
+
+.sliderText {
+  display: block;
+}
+
+
+Generator {
+  padding-bottom: 5px;
+}
+
+Password {
+  margin: 10px 0;
+  padding: 10px 0;
+}
+
+Copier {
+  padding: 20 0;
+}
