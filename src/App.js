@@ -11,16 +11,24 @@ require("password-maker")
 
 
 // passwordMaker
-
 const generatePassword = require("password-maker");
 
 const options = {
-    uppercase: true,
-    symbols  : true,
-    numbers  : true
+    uppercase: false,
+    symbols  : false,
+    numbers  : false
   };
 
-const makePassword = generatePassword(options,32);
+const makePassword = generatePassword(options,passwordLength);
+const passwordLength = {state: Slider}
+
+  /*
+const options = {
+    uppercase: state.switched ? true : false,
+    symbols  : state.switched ? true : false,
+    numbers  : state.switched ? true : false
+  };
+*/
 
 // Toggles
   const styles = {
@@ -50,20 +58,26 @@ const makePassword = generatePassword(options,32);
   },
 };
 
+
+
+
 class App extends Component {
-
-
+ /*
+ constructor(props) {
+    super(props);
+    this.state = {  initial state  };
+    */
+  }
 // Slider
   state = {
     Slider: 11,
   };
 
+// handlers
+
   handleSlider = (event, value) => {
     this.setState({Slider: value});
-    const passwordLength = this.state.Slider
   };
-
-// handlers
 
   handleClick1 = function(e) {
     // alert(makePassword)
@@ -89,8 +103,8 @@ class App extends Component {
           <h2>{'Password Length: '}{this.state.Slider}</h2>
         </div>
         <Slider
-          min={3}
-          max={32}
+          min={4}
+          max={40}
           step={1}
           defaultValue={11}
           value={this.state.Slider}
