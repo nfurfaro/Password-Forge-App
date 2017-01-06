@@ -9,18 +9,7 @@ import Toggle from 'material-ui/Toggle';
 import RaisedButton from 'material-ui/RaisedButton';
 require("password-maker")
 
-
-// passwordMaker
-const generatePassword = require("password-maker");
-
-const options = {
-    uppercase: false,
-    symbols  : false,
-    numbers  : false
-  };
-
-const makePassword = generatePassword(options,passwordLength);
-const passwordLength = {state: Slider}
+const that = this
 
   /*
 const options = {
@@ -58,20 +47,17 @@ const options = {
   },
 };
 
-
-
+//------------------------------------------------------------------
+// Component
+//------------------------------------------------------------------
 
 class App extends Component {
- /*
+
  constructor(props) {
     super(props);
-    this.state = {  initial state  };
-    */
+    this.state = {Slider: 11};
+    const that = this.state
   }
-// Slider
-  state = {
-    Slider: 11,
-  };
 
 // handlers
 
@@ -80,9 +66,21 @@ class App extends Component {
   };
 
   handleClick1 = function(e) {
-    // alert(makePassword)
+
+    const generatePassword = require("password-maker");
+
+    const options = {
+        uppercase: true,
+        symbols  : true,
+        numbers  : true
+      };
+
+    const passwordLength = {state: Slider}
+
+    const makePassword = generatePassword(options,that)
     document.getElementById("password").innerHTML = makePassword
   };
+
 
   handleClick2 = function(e) {
     alert('Copy not built yet!')

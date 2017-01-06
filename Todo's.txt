@@ -1,5 +1,0 @@
-password function spits out same password until browser is reloaded
-
-how to make 'this.state.Slider' available to 'makePassword'
-
-
