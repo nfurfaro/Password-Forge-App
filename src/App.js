@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import muiThemeable from 'material-ui/styles/muiThemeable';
 import './App.css';
 import FontAwesome from 'react-fontawesome';
 import './resources/fonts/font-awesome-4.7.0/css/font-awesome.min.css'
@@ -9,17 +10,14 @@ import Toggle from 'material-ui/Toggle';
 import RaisedButton from 'material-ui/RaisedButton';
 require("password-maker")
 
-const that = this
 
-  /*
-const options = {
-    uppercase: state.switched ? true : false,
-    symbols  : state.switched ? true : false,
-    numbers  : state.switched ? true : false
-  };
-*/
+// const trackColorSelected= MuiThemeProvider._context$muiTheme$sli.trackColorSelected
 
-// Toggles
+
+
+
+// Toggle Styles
+
   const styles = {
   block: {
     maxWidth: '15%',
@@ -31,10 +29,10 @@ const options = {
     marginBottom: 16,
   },
   thumbOff: {
-    backgroundColor: '#007171',
+    backgroundColor: '#7FFFFF',
   },
   trackOff: {
-    backgroundColor: '#fff',
+    backgroundColor: '#9E9E9E',
   },
   thumbSwitched: {
     backgroundColor: '#BC0000',
@@ -47,44 +45,65 @@ const options = {
   },
 };
 
+//Password-Maker Stuff
+
+const generatePassword = require("password-maker");
+const options = {
+    uppercase: true,
+    symbols  : true,
+    numbers  : true
+  };
+
+//Slider Stuff
+
+//const currentSliderValue = this.state.Slider
+
 //------------------------------------------------------------------
 // Component
 //------------------------------------------------------------------
+
+
 
 class App extends Component {
 
  constructor(props) {
     super(props);
-    this.state = {Slider: 11};
-    const that = this.state
+    this.state = {Slider: 23};
   }
+
 
 // handlers
 
-  handleSlider = (event, value) => {
+    handleSlider = (event, value) => {
     this.setState({Slider: value});
   };
 
-  handleClick1 = function(e) {
-
-    const generatePassword = require("password-maker");
-
-    const options = {
-        uppercase: true,
-        symbols  : true,
-        numbers  : true
-      };
-
-    const passwordLength = {state: Slider}
-
-    const makePassword = generatePassword(options,that)
-    document.getElementById("password").innerHTML = makePassword
+  handleToggleUppercase = (event) => {
+    alert('switch-U')
   };
 
+  handleToggleSymbols = (event) => {
+    alert('switch-S')
+  };
+
+  handleToggleNumbers = (event) => {
+    alert('switch-N')
+  };
+
+  handleClick1 = function(e) {
+    const makePassword = generatePassword(options,11)
+    document.getElementById("password").innerHTML = makePassword
+  };
 
   handleClick2 = function(e) {
     alert('Copy not built yet!')
   };
+
+//end handlers
+
+
+
+
 
   render() {
     return (
@@ -97,36 +116,31 @@ class App extends Component {
         <h1>Password Maker</h1>
         <div>
     <div className="Slider">
-        <div className="sliderText">
-          <h2>{'Password Length: '}{this.state.Slider}</h2>
-        </div>
-        <Slider
+      <Slider className="Line"
           min={4}
-          max={40}
+          max={42}
           step={1}
-          defaultValue={11}
+          defaultValue={23}
           value={this.state.Slider}
           onChange={this.handleSlider}
         />
-      </div>
+        <div className="sliderText">
+          <h2>{'Password Length: '}{this.state.Slider}</h2>
+        </div>
+    </div>
+
     <div className="Toggles" style ={styles.block}>
 
        <Toggle
-         label="Letters"
+         label="Uppercase"
          thumbStyle={styles.thumbOff}
          trackStyle={styles.trackOff}
          thumbSwitchedStyle={styles.thumbSwitched}
          trackSwitchedStyle={styles.trackSwitched}
          labelStyle={styles.labelStyle}
-       />
+         defaultToggled="true"
+         onToggle={this.handleToggleUppercase}
 
-       <Toggle
-         label="Numbers"
-         thumbStyle={styles.thumbOff}
-         trackStyle={styles.trackOff}
-         thumbSwitchedStyle={styles.thumbSwitched}
-         trackSwitchedStyle={styles.trackSwitched}
-         labelStyle={styles.labelStyle}
        />
 
        <Toggle
@@ -136,14 +150,29 @@ class App extends Component {
          thumbSwitchedStyle={styles.thumbSwitched}
          trackSwitchedStyle={styles.trackSwitched}
          labelStyle={styles.labelStyle}
+         defaultToggled="true"
+         onToggle={this.handleToggleSymbols}
+       />
+
+       <Toggle
+         label="Numbers"
+         thumbStyle={styles.thumbOff}
+         trackStyle={styles.trackOff}
+         thumbSwitchedStyle={styles.thumbSwitched}
+         trackSwitchedStyle={styles.trackSwitched}
+         labelStyle={styles.labelStyle}
+         defaultToggled="true"
+         onToggle={this.handleToggleNumbers}
        />
 
     </div>
 
+
   </div>
-        <RaisedButton label="Make Password" backgroundColor='#FF0000' onClick={this.handleClick1}/>
+        <RaisedButton label="Make" backgroundColor='#FF0000' labelColor="#560000" onClick={this.handleClick1}/>
           <h2 id="password"></h2>
-        <RaisedButton label="Copy Password"  backgroundColor='#003233' labelColor='#fff' onClick={this.handleClick2} />
+        <RaisedButton className="Copy"label="Copy" backgroundColor="#006A6C"
+        labelColor="#7FFFFF" onClick={this.handleClick2} />
       </div>
       </MuiThemeProvider>
     );
