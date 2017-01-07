@@ -23,19 +23,22 @@ require("password-maker")
     marginBottom: 16,
   },
   thumbOff: {
-    backgroundColor: '#F20000',
+    backgroundColor: '#A60707',
   },
   trackOff: {
-    backgroundColor: '#A60707',
+    backgroundColor: '#F20000',
   },
   thumbSwitched: {
     backgroundColor: '#7FFFFF',
   },
   trackSwitched: {
-    backgroundColor: '#0A7678',
+    backgroundColor: '#006A6C',
   },
   labelStyle: {
-    color: '#e2feff',
+    color: '#7FFFFF',
+    fontSize: 25,
+    fontWeight: 300,
+    letterSpacing: 1.5,
   },
 };
 
@@ -118,10 +121,11 @@ class App extends Component {
           value={this.state.Slider}
           onChange={this.handleSlider}
         />
-        <div className="sliderText">
-          <h2>{'Password Length: '}{this.state.Slider}</h2>
         </div>
-    </div>
+
+          <h2>{'Password Length: '}{this.state.Slider}</h2>
+
+
 
     <div className="Toggles" style={styles.block}>
 
@@ -163,8 +167,8 @@ class App extends Component {
 
 
   </div>
-        <RaisedButton label="Make" backgroundColor='#FF0000' labelColor="#560000" onClick={this.handleClick1}/>
-          <h2 id="password"></h2>
+        <RaisedButton label="Make" backgroundColor='#FF3232' labelColor="black" labelWeight="500" onClick={this.handleClick1}/>
+          <h3 id="password"></h3>
         <RaisedButton className="Copy"label="Copy" backgroundColor="#006A6C"
         labelColor="#7FFFFF" onClick={this.handleClick2} />
       </div>

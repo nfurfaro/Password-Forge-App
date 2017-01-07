@@ -27,13 +27,19 @@ h1 {
 }
 
 h2 {
-
-
   font-size: 40px;
-  font-weight: 300;
+  font-weight: 400;
+  padding: 0 0 10px 0;
+  margin: 0 0 10px 0;
+  color: #7FFFFF;
+}
+
+h3 {
+  font-size: 40px;
+  font-weight: 400;
   padding: 10px 0;
   margin: 5px 0;
-  color: #f5f5f5;
+  color: #003535;
 }
 
 Logo {
@@ -47,21 +53,22 @@ span {
 
 }
 
-.line {
-  handleSize: 50px !important;
-}
+
 .Slider {
   display: inline-block;
-  padding: 5px 20px;
-  margin-bottom: 5px;
+  padding: 0px 20px;
   width: 50%;
 }
 
 .sliderText {
-  display: block;
-  color:#e0e0e0;
+  display: inline-block;
+  border: 1px solid #000;
 }
 
+.Length {
+  font-weight: 500;
+  border: 1px solid #fff;
+}
 
 Generator {
   padding-bottom: 5px;
@@ -70,7 +77,8 @@ Generator {
 Password {
   margin: 5px 0;
   padding: 5px 0;
-  min-height: 30px
+  min-height: 30px;
+  color:  #0A7678
 }
 
 .Copy {
