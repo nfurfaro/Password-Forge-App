@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import muiThemeable from 'material-ui/styles/muiThemeable';
 import './App.css';
 import FontAwesome from 'react-fontawesome';
 import './resources/fonts/font-awesome-4.7.0/css/font-awesome.min.css'
@@ -9,11 +8,6 @@ import Slider from 'material-ui/Slider';
 import Toggle from 'material-ui/Toggle';
 import RaisedButton from 'material-ui/RaisedButton';
 require("password-maker")
-
-
-// const trackColorSelected= MuiThemeProvider._context$muiTheme$sli.trackColorSelected
-
-
 
 
 // Toggle Styles
@@ -29,16 +23,16 @@ require("password-maker")
     marginBottom: 16,
   },
   thumbOff: {
-    backgroundColor: '#7FFFFF',
+    backgroundColor: '#F20000',
   },
   trackOff: {
-    backgroundColor: '#9E9E9E',
+    backgroundColor: '#A60707',
   },
   thumbSwitched: {
-    backgroundColor: '#BC0000',
+    backgroundColor: '#7FFFFF',
   },
   trackSwitched: {
-    backgroundColor: '#FF0000',
+    backgroundColor: '#0A7678',
   },
   labelStyle: {
     color: '#e2feff',
@@ -129,7 +123,7 @@ class App extends Component {
         </div>
     </div>
 
-    <div className="Toggles" style ={styles.block}>
+    <div className="Toggles" style={styles.block}>
 
        <Toggle
          label="Uppercase"
