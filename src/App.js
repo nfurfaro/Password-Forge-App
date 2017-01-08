@@ -44,7 +44,7 @@ require("password-maker")
 };
 
 //Password-Maker Stuff
-const Length = 5
+const Length = 23
 const generatePassword = require("password-maker");
 const options = {
     uppercase: true,
