@@ -99,7 +99,7 @@ class App extends Component {
             className='fa-snowflake-o'
             name='snowflake'
             size='5x'/>
-        <h1>Password Maker</h1>
+        <h1>Password.new</h1>
         <div>
     <div className="Slider">
       <Slider className="Line"
@@ -150,7 +150,7 @@ class App extends Component {
 
 
   </div>
-        <RaisedButton label="Make" backgroundColor='#FF3232' labelColor="#780707" onClick={this.handleClick1.bind(this)}/>
+        <RaisedButton label="New" backgroundColor='#FF3232' labelColor="#7FFFFF" onClick={this.handleClick1.bind(this)}/>
           <h3 id="password"></h3>
         <RaisedButton className="Copy"label="Copy" backgroundColor="#006A6C"
         labelColor="#7FFFFF" onClick={this.handleClick2.bind(this)} />
