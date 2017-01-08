@@ -10,6 +10,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 require("password-maker")
 
 
+
 // Toggle Styles
 
   const styles = {
@@ -43,17 +44,13 @@ require("password-maker")
 };
 
 //Password-Maker Stuff
-
+const Length = 5
 const generatePassword = require("password-maker");
 const options = {
     uppercase: true,
     symbols  : true,
     numbers  : true
   };
-
-//Slider Stuff
-
-//const currentSliderValue = this.state.Slider
 
 //------------------------------------------------------------------
 // Component
@@ -88,7 +85,7 @@ class App extends Component {
   };
 
   handleClick1 = function(e) {
-    const makePassword = generatePassword(options,11)
+    const makePassword = generatePassword(options,Length)
     document.getElementById("password").innerHTML = makePassword
   };
 
@@ -97,10 +94,6 @@ class App extends Component {
   };
 
 //end handlers
-
-
-
-
 
   render() {
     return (
@@ -122,8 +115,7 @@ class App extends Component {
           onChange={this.handleSlider}
         />
         </div>
-
-          <h2>{'Password Length: '}{this.state.Slider}</h2>
+        <h2>{'Password Length: '}{this.state.Slider}</h2>
 
 
 
