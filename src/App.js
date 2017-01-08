@@ -44,9 +44,9 @@ require("password-maker")
 };
 
 //Password-Maker Stuff
-const Length = 23
-const generatePassword = require("password-maker");
-const options = {
+const Length = 5
+var generatePassword = require("password-maker");
+var options = {
     uppercase: true,
     symbols  : true,
     numbers  : true
@@ -59,17 +59,21 @@ const options = {
 
 
 class App extends Component {
-
- constructor(props) {
-    super(props);
-    this.state = {Slider: 23};
-  }
+    constructor(props) {
+       super(props);
+        this.state = {
+          Slider: 23,
+          UppercaseToggle: "True",
+          SymbolsToggle: "True",
+          NumbersToggle: "True"
+        };
+    };
 
 
 // handlers
 
     handleSlider = (event, value) => {
-    this.setState({Slider: value});
+      this.setState({Slider: value})
   };
 
   handleToggleUppercase = (event) => {
@@ -85,13 +89,13 @@ class App extends Component {
   };
 
   handleClick1 = function(e) {
-    const makePassword = generatePassword(options,Length)
+    var makePassword = generatePassword(options, Length)
     document.getElementById("password").innerHTML = makePassword
   };
 
   handleClick2 = function(e) {
     alert('Copy not built yet!')
-  };
+  }
 
 //end handlers
 
