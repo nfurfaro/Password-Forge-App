@@ -3,11 +3,11 @@ This project is being built primarily as a personal learning project.
 
 Todo's:
 
-1.) Get Slider value piped into password-maker function as argument # 2.
+1.) copy button
 
-2.) Get Toggle values (boolean) piped into password-maker function as argument # 1. First the toggle values must modify? the options object to reflect user choices, maybe using the ! operator as a boolean switch?
+2.) Add lowercase toggle
 
-3.) Work on responsiveness.
+3.) Work on responsiveness & styling
 
 4.) Test.
 

@@ -10,7 +10,6 @@ import RaisedButton from 'material-ui/RaisedButton';
 require("password-maker")
 
 
-
 // Toggle Styles
 
   const styles = {
@@ -24,10 +23,10 @@ require("password-maker")
     marginBottom: 16,
   },
   thumbOff: {
-    backgroundColor: '#A60707',
+    backgroundColor: '#780707',
   },
   trackOff: {
-    backgroundColor: '#F20000',
+    backgroundColor: '#FF3232',
   },
   thumbSwitched: {
     backgroundColor: '#7FFFFF',
@@ -46,8 +45,6 @@ require("password-maker")
 //------------------------------------------------------------------
 // Component
 //------------------------------------------------------------------
-
-
 class App extends Component {
     constructor(props, context) {
        super(props,context);
@@ -59,32 +56,30 @@ class App extends Component {
         };
     };
 
-
 // handlers
-
   handleSlider = (event, value) => {
       this.setState({Slider: value})
   };
 
   handleToggleUppercase = (event) => {
-    alert('switch-U')
+    this.state.UppercaseToggle ? this.setState({UppercaseToggle: false}) : this.setState({UppercaseToggle: true})
   };
 
   handleToggleSymbols = (event) => {
-    alert('switch-S')
+    this.state.SymbolsToggle ? this.setState({SymbolsToggle: false}) : this.setState({SymbolsToggle: true})
   };
 
   handleToggleNumbers = (event) => {
-    alert('switch-N')
+    this.state.NumbersToggle ? this.setState({NumbersToggle: false}) : this.setState({NumbersToggle: true})
   };
 
   handleClick1 = function(e) {
     const Length = this.state.Slider
     var generatePassword = require("password-maker");
     var options = {
-    uppercase: true,
-    symbols  : true,
-    numbers  : true
+    uppercase: this.state.UppercaseToggle,
+    symbols  : this.state.SymbolsToggle,
+    numbers  : this.state.NumbersToggle
   };
     var makePassword = generatePassword(options, Length)
     document.getElementById("password").innerHTML = makePassword
@@ -116,11 +111,7 @@ class App extends Component {
         />
         </div>
         <h2>{'Password Length: '}{this.state.Slider}</h2>
-
-
-
     <div className="Toggles" style={styles.block}>
-
        <Toggle
          label="Uppercase"
          thumbStyle={styles.thumbOff}
@@ -159,7 +150,7 @@ class App extends Component {
 
 
   </div>
-        <RaisedButton label="Make" backgroundColor='#FF3232' labelColor="black" labelWeight="500" onClick={this.handleClick1.bind(this)}/>
+        <RaisedButton label="Make" backgroundColor='#FF3232' labelColor="#780707" onClick={this.handleClick1.bind(this)}/>
           <h3 id="password"></h3>
         <RaisedButton className="Copy"label="Copy" backgroundColor="#006A6C"
         labelColor="#7FFFFF" onClick={this.handleClick2.bind(this)} />
