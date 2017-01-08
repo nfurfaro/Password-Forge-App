@@ -43,24 +43,14 @@ require("password-maker")
   },
 };
 
-//Password-Maker Stuff
-const Length = 5
-var generatePassword = require("password-maker");
-var options = {
-    uppercase: true,
-    symbols  : true,
-    numbers  : true
-  };
-
 //------------------------------------------------------------------
 // Component
 //------------------------------------------------------------------
 
 
-
 class App extends Component {
-    constructor(props) {
-       super(props);
+    constructor(props, context) {
+       super(props,context);
         this.state = {
           Slider: 23,
           UppercaseToggle: "True",
@@ -72,7 +62,7 @@ class App extends Component {
 
 // handlers
 
-    handleSlider = (event, value) => {
+  handleSlider = (event, value) => {
       this.setState({Slider: value})
   };
 
@@ -89,6 +79,13 @@ class App extends Component {
   };
 
   handleClick1 = function(e) {
+    const Length = this.state.Slider
+    var generatePassword = require("password-maker");
+    var options = {
+    uppercase: true,
+    symbols  : true,
+    numbers  : true
+  };
     var makePassword = generatePassword(options, Length)
     document.getElementById("password").innerHTML = makePassword
   };
@@ -114,9 +111,8 @@ class App extends Component {
           min={4}
           max={42}
           step={1}
-          defaultValue={23}
           value={this.state.Slider}
-          onChange={this.handleSlider}
+          onChange={this.handleSlider.bind(this)}
         />
         </div>
         <h2>{'Password Length: '}{this.state.Slider}</h2>
@@ -133,7 +129,7 @@ class App extends Component {
          trackSwitchedStyle={styles.trackSwitched}
          labelStyle={styles.labelStyle}
          defaultToggled="true"
-         onToggle={this.handleToggleUppercase}
+         onToggle={this.handleToggleUppercase.bind(this)}
 
        />
 
@@ -145,7 +141,7 @@ class App extends Component {
          trackSwitchedStyle={styles.trackSwitched}
          labelStyle={styles.labelStyle}
          defaultToggled="true"
-         onToggle={this.handleToggleSymbols}
+         onToggle={this.handleToggleSymbols.bind(this)}
        />
 
        <Toggle
@@ -156,17 +152,17 @@ class App extends Component {
          trackSwitchedStyle={styles.trackSwitched}
          labelStyle={styles.labelStyle}
          defaultToggled="true"
-         onToggle={this.handleToggleNumbers}
+         onToggle={this.handleToggleNumbers.bind(this)}
        />
 
     </div>
 
 
   </div>
-        <RaisedButton label="Make" backgroundColor='#FF3232' labelColor="black" labelWeight="500" onClick={this.handleClick1}/>
+        <RaisedButton label="Make" backgroundColor='#FF3232' labelColor="black" labelWeight="500" onClick={this.handleClick1.bind(this)}/>
           <h3 id="password"></h3>
         <RaisedButton className="Copy"label="Copy" backgroundColor="#006A6C"
-        labelColor="#7FFFFF" onClick={this.handleClick2} />
+        labelColor="#7FFFFF" onClick={this.handleClick2.bind(this)} />
       </div>
       </MuiThemeProvider>
     );
