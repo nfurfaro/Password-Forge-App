@@ -79,16 +79,19 @@ class App extends Component {
     handleMakePassword() {
       var options = {
         uppercase: this.state.includeUppercase,
-        symbols  : this.state.includesymbols,
-        numbers  : this.state.includenumbers
+        symbols  : this.state.includeSymbols,
+        numbers  : this.state.includeNumbers
       };
       this.setState({
         password: passwordMaker(options, this.state.length)
       });
+      document.querySelector("#password-display").style.visibility="visible"
     }
 
     handleCopy() {
       this.setState({copied: true});
+      document.querySelector("#password-display").style.visibility="hidden";
+
     }
 
     render() {
@@ -115,7 +118,7 @@ class App extends Component {
               <div className="Toggles" style={styles.block}>
                 <Toggle
                   label="Uppercase"
-                  thumbStylce={styles.thumbOff}
+                  thumbStyle={styles.thumbOff}
                   trackStyle={styles.trackOff}
                   thumbSwitchedStyle={styles.thumbSwitched}
                   trackSwitchedStyle={styles.trackSwitched}
@@ -150,7 +153,7 @@ class App extends Component {
               labelColor="#7FFFFF"
               onClick={this.handleMakePassword.bind(this)}/>
 
-            <h3>{this.state.password}</h3>&nbsp;
+            <h3 id="password-display">{this.state.password}</h3>&nbsp;
 
             <CopyToClipboard text={this.state.password}>
               <RaisedButton
@@ -161,11 +164,6 @@ class App extends Component {
                 onClick={this.handleCopy.bind(this)}/>
             </CopyToClipboard>&nbsp;
 
-            {
-              this.state.copied ?
-              <h2 style={{color: 'red'}}>Copied.</h2> :
-              null
-            }
           </div>
         </MuiThemeProvider>
     );
