@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom'
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import './App.css';
@@ -7,12 +8,13 @@ import './resources/fonts/font-awesome-4.7.0/css/font-awesome.min.css'
 import Slider from 'material-ui/Slider';
 import Toggle from 'material-ui/Toggle';
 import RaisedButton from 'material-ui/RaisedButton';
-require("password-maker")
+import passwordMaker from 'password-maker';
+import CopyToClipboard from 'react-copy-to-clipboard';
 
 
 // Toggle Styles
 
-  const styles = {
+const styles = {
   block: {
     maxWidth: '15%',
     marginLeft: '42.5%',
@@ -46,116 +48,126 @@ require("password-maker")
 // Component
 //------------------------------------------------------------------
 class App extends Component {
-    constructor(props, context) {
-       super(props,context);
-        this.state = {
-          Slider: 23,
-          UppercaseToggle: "True",
-          SymbolsToggle: "True",
-          NumbersToggle: "True"
-        };
-    };
+  constructor(props) {
+     super(props);
+      this.state = {
+        length: 23,
+        includeUppercase: true,
+        includeSymbols: true,
+        includeNumbers: true,
+        password: '',
+        copied: false
+      };
+    }
 
-// handlers
-  handleSlider = (event, value) => {
-      this.setState({Slider: value})
-  };
+    handleLengthSlider(length) {
+      this.setState({ length });
+    }
 
-  handleToggleUppercase = (event) => {
-    this.state.UppercaseToggle ? this.setState({UppercaseToggle: false}) : this.setState({UppercaseToggle: true})
-  };
+    handleToggleUppercase() {
+      this.setState({ includeUppercase: !this.state.includeUppercase });
+    }
 
-  handleToggleSymbols = (event) => {
-    this.state.SymbolsToggle ? this.setState({SymbolsToggle: false}) : this.setState({SymbolsToggle: true})
-  };
+    handleToggleSymbols() {
+      this.setState({ includeSymbols: !this.state.includeSymbols });
+    }
 
-  handleToggleNumbers = (event) => {
-    this.state.NumbersToggle ? this.setState({NumbersToggle: false}) : this.setState({NumbersToggle: true})
-  };
+    handleToggleNumbers() {
+      this.setState({ includeNumbers: !this.state.includeNumbers });
+    }
 
-  handleClick1 = function(e) {
-    const Length = this.state.Slider
-    var generatePassword = require("password-maker");
-    var options = {
-    uppercase: this.state.UppercaseToggle,
-    symbols  : this.state.SymbolsToggle,
-    numbers  : this.state.NumbersToggle
-  };
-    var makePassword = generatePassword(options, Length)
-    document.getElementById("password").innerHTML = makePassword
-  };
+    handleMakePassword() {
+      var options = {
+        uppercase: this.state.includeUppercase,
+        symbols  : this.state.includesymbols,
+        numbers  : this.state.includenumbers
+      };
+      this.setState({
+        password: passwordMaker(options, this.state.length)
+      });
+    }
 
-  handleClick2 = function(e) {
-    alert('Copy not built yet!')
-  }
+    handleCopy() {
+      this.setState({copied: true});
+    }
 
-//end handlers
+    render() {
+      return (
+        <MuiThemeProvider>
+          <div className="App">
+            <FontAwesome
+                className='fa-snowflake-o'
+                name='snowflake'
+                size='5x'/>
+            <h1>Password.new</h1>
+            <div>
+              <div className="Slider">
+                <Slider className="Line"
+                    min={4}
+                    max={42}
+                    step={1}
+                    value={this.state.length}
+                    onChange={(e, val) => {
+                      this.handleLengthSlider.bind(this)(val)}
+                    }/>
+              </div>
+              <h2>{`Password Length: ${this.state.length}`}</h2>
+              <div className="Toggles" style={styles.block}>
+                <Toggle
+                  label="Uppercase"
+                  thumbStylce={styles.thumbOff}
+                  trackStyle={styles.trackOff}
+                  thumbSwitchedStyle={styles.thumbSwitched}
+                  trackSwitchedStyle={styles.trackSwitched}
+                  labelStyle={styles.labelStyle}
+                  defaultToggled={this.state.includeUppercase}
+                  onToggle={this.handleToggleUppercase.bind(this)} />
 
-  render() {
-    return (
-      <MuiThemeProvider>
-      <div className="App">
-        <FontAwesome
-            className='fa-snowflake-o'
-            name='snowflake'
-            size='5x'/>
-        <h1>Password.new</h1>
-        <div>
-    <div className="Slider">
-      <Slider className="Line"
-          min={4}
-          max={42}
-          step={1}
-          value={this.state.Slider}
-          onChange={this.handleSlider.bind(this)}
-        />
-        </div>
-        <h2>{'Password Length: '}{this.state.Slider}</h2>
-    <div className="Toggles" style={styles.block}>
-       <Toggle
-         label="Uppercase"
-         thumbStyle={styles.thumbOff}
-         trackStyle={styles.trackOff}
-         thumbSwitchedStyle={styles.thumbSwitched}
-         trackSwitchedStyle={styles.trackSwitched}
-         labelStyle={styles.labelStyle}
-         defaultToggled="true"
-         onToggle={this.handleToggleUppercase.bind(this)}
+                <Toggle
+                  label="Symbols"
+                  thumbStyle={styles.thumbOff}
+                  trackStyle={styles.trackOff}
+                  thumbSwitchedStyle={styles.thumbSwitched}
+                  trackSwitchedStyle={styles.trackSwitched}
+                  labelStyle={styles.labelStyle}
+                  defaultToggled={this.state.includeSymbols}
+                  onToggle={this.handleToggleSymbols.bind(this)} />
 
-       />
+                <Toggle
+                  label="Numbers"
+                  thumbStyle={styles.thumbOff}
+                  trackStyle={styles.trackOff}
+                  thumbSwitchedStyle={styles.thumbSwitched}
+                  trackSwitchedStyle={styles.trackSwitched}
+                  labelStyle={styles.labelStyle}
+                  defaultToggled={this.state.includeNumbers}
+                  onToggle={this.handleToggleNumbers.bind(this)}/>
+              </div>
+            </div>
+            <RaisedButton
+              label="New"
+              backgroundColor='#FF3232'
+              labelColor="#7FFFFF"
+              onClick={this.handleMakePassword.bind(this)}/>
 
-       <Toggle
-         label="Symbols"
-         thumbStyle={styles.thumbOff}
-         trackStyle={styles.trackOff}
-         thumbSwitchedStyle={styles.thumbSwitched}
-         trackSwitchedStyle={styles.trackSwitched}
-         labelStyle={styles.labelStyle}
-         defaultToggled="true"
-         onToggle={this.handleToggleSymbols.bind(this)}
-       />
+            <h3>{this.state.password}</h3>&nbsp;
 
-       <Toggle
-         label="Numbers"
-         thumbStyle={styles.thumbOff}
-         trackStyle={styles.trackOff}
-         thumbSwitchedStyle={styles.thumbSwitched}
-         trackSwitchedStyle={styles.trackSwitched}
-         labelStyle={styles.labelStyle}
-         defaultToggled="true"
-         onToggle={this.handleToggleNumbers.bind(this)}
-       />
+            <CopyToClipboard text={this.state.password}>
+              <RaisedButton
+                className="Copy"
+                label="Copy"
+                backgroundColor="#006A6C"
+                labelColor="#7FFFFF"
+                onClick={this.handleCopy.bind(this)}/>
+            </CopyToClipboard>&nbsp;
 
-    </div>
-
-
-  </div>
-        <RaisedButton label="New" backgroundColor='#FF3232' labelColor="#7FFFFF" onClick={this.handleClick1.bind(this)}/>
-          <h3 id="password"></h3>
-        <RaisedButton className="Copy"label="Copy" backgroundColor="#006A6C"
-        labelColor="#7FFFFF" onClick={this.handleClick2.bind(this)} />
-      </div>
-      </MuiThemeProvider>
+            {
+              this.state.copied ?
+              <h2 style={{color: 'red'}}>Copied.</h2> :
+              null
+            }
+          </div>
+        </MuiThemeProvider>
     );
   }
 }
