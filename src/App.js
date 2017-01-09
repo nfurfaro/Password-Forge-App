@@ -52,9 +52,9 @@ class App extends Component {
      super(props);
       this.state = {
         length: 23,
-        includeUppercase: true,
-        includeSymbols: true,
-        includeNumbers: true,
+        includeUppercase: false,
+        includeSymbols: false,
+        includeNumbers: false,
         password: '',
         copied: false
       };
@@ -102,7 +102,7 @@ class App extends Component {
                 className='fa-snowflake-o'
                 name='snowflake'
                 size='5x'/>
-            <h1>Password.new</h1>
+            <h1>Password Forge</h1>
             <div>
               <div className="Slider">
                 <Slider className="Line"
@@ -147,11 +147,12 @@ class App extends Component {
                   onToggle={this.handleToggleNumbers.bind(this)}/>
               </div>
             </div>
+
             <RaisedButton
               label="New"
               backgroundColor='#FF3232'
               labelColor="#7FFFFF"
-              onClick={this.handleMakePassword.bind(this)}/>
+              onClick={this.handleMakePassword.bind(this)}></RaisedButton>
 
             <h3 id="password-display">{this.state.password}</h3>&nbsp;
 
