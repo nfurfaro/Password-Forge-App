@@ -85,12 +85,17 @@ class App extends Component {
       this.setState({
         password: passwordMaker(options, this.state.length)
       });
-      document.querySelector("#password-display").style.visibility="visible"
+      document.querySelector("#password-display").style.visibility="visible";
+      document.querySelector("#make").style.backgroundColor='#057072'
+      document.querySelector("#copy").style.backgroundColor='#FF3232'
+
     }
 
     handleCopy() {
       this.setState({copied: true});
       document.querySelector("#password-display").style.visibility="hidden";
+      document.querySelector("#copy").style.backgroundColor='#057072'
+      document.querySelector("#make").style.backgroundColor='#FF3232'
 
     }
 
@@ -149,7 +154,8 @@ class App extends Component {
             </div>
 
             <RaisedButton
-              label="New"
+              id="make"
+              label="Make"
               backgroundColor='#FF3232'
               labelColor="#7FFFFF"
               onClick={this.handleMakePassword.bind(this)}></RaisedButton>
@@ -158,6 +164,7 @@ class App extends Component {
 
             <CopyToClipboard text={this.state.password}>
               <RaisedButton
+              id="copy"
                 className="Copy"
                 label="Copy"
                 backgroundColor="#006A6C"
