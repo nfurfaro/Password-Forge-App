@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom'
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import './App.css';
@@ -10,8 +9,6 @@ import Toggle from 'material-ui/Toggle';
 import RaisedButton from 'material-ui/RaisedButton';
 import passwordMaker from 'password-maker';
 import CopyToClipboard from 'react-copy-to-clipboard';
-import Menu from './Menu'
-
 
 
 // Toggle Styles
