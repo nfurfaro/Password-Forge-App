@@ -21,7 +21,7 @@ const styles = {
     textAlign: 'left',
   },
   toggle: {
-    marginBottom: 16,
+    marginBottom: 10,
   },
   thumbOff: {
     backgroundColor: '#780707',
@@ -102,7 +102,7 @@ class App extends Component {
     render() {
       return (
         <MuiThemeProvider>
-          <div className="App"  style={padding-bottom: 30px}>
+          <div className="App">
             <FontAwesome
                 className='fa-free-code-camp'
                 name='fire'
@@ -153,7 +153,7 @@ class App extends Component {
                   defaultToggled={this.state.includeNumbers}
                   onToggle={this.handleToggleNumbers.bind(this)}/>
               </div>
-            </div className="buttons">
+            </div>
 
             <RaisedButton
               id="make"
