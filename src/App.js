@@ -102,7 +102,7 @@ class App extends Component {
     render() {
       return (
         <MuiThemeProvider>
-          <div className="App">
+          <div className="App"  style={padding-bottom: 30px}>
             <FontAwesome
                 className='fa-free-code-camp'
                 name='fire'
@@ -153,7 +153,7 @@ class App extends Component {
                   defaultToggled={this.state.includeNumbers}
                   onToggle={this.handleToggleNumbers.bind(this)}/>
               </div>
-            </div>
+            </div className="buttons">
 
             <RaisedButton
               id="make"
