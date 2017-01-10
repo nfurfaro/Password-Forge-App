@@ -10,6 +10,8 @@ import Toggle from 'material-ui/Toggle';
 import RaisedButton from 'material-ui/RaisedButton';
 import passwordMaker from 'password-maker';
 import CopyToClipboard from 'react-copy-to-clipboard';
+import Menu from './Menu'
+
 
 
 // Toggle Styles
@@ -94,8 +96,9 @@ class App extends Component {
     handleCopy() {
       this.setState({copied: true});
       document.querySelector("#password-display").style.visibility="hidden";
-      document.querySelector("#copy").style.backgroundColor='#057072'
       document.querySelector("#make").style.backgroundColor='#FF3232'
+      document.querySelector("#copy").style.backgroundColor='#057072'
+
 
     }
 
@@ -104,10 +107,12 @@ class App extends Component {
         <MuiThemeProvider>
           <div className="App">
             <FontAwesome
-                className='fa-snowflake-o'
-                name='snowflake'
+                className='fa-free-code-camp'
+                name='fire'
                 size='5x'/>
-            <h1>Password Forge</h1>
+                <p>pf</p>
+            <h1>Pass<wbr/>word Forge</h1>
+            <h4>(artisanal passwords forged from unicorn horns) </h4>
             <div>
               <div className="Slider">
                 <Slider className="Line"
