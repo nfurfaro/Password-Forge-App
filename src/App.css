@@ -40,7 +40,7 @@ fa-free-code-camp {
 
 h1 {
   font-size: 150px;
-  font-weight: 200;
+  font-weight: 100;
   padding: 10px 0;
   margin-top: 20px;
   color: #7FFFFF;
@@ -80,6 +80,7 @@ p {
   margin: 25px 25% 0 25%;
   padding: 10px 0 0 0;
 }
+
 
 #password-display {
   margin: 5px 0;

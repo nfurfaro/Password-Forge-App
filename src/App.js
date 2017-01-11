@@ -38,10 +38,17 @@ const styles = {
   labelStyle: {
     color: '#7FFFFF',
     fontSize: 25,
-    fontWeight: 300,
+    fontWeight: 500,
     letterSpacing: 1.5,
   },
 };
+
+// Button Style
+
+const buttonStyle = {
+  width: '10%',
+};
+
 
 //------------------------------------------------------------------
 // Component
@@ -86,7 +93,7 @@ class App extends Component {
       });
       document.querySelector("#password-display").style.visibility="visible";
       document.querySelector("#forge").style.backgroundColor='#057072'
-      document.querySelector("#copy").style.backgroundColor='#FF3232'
+      document.querySelector("#take").style.backgroundColor='#FF3232'
 
     }
 
@@ -94,7 +101,7 @@ class App extends Component {
       this.setState({copied: true});
       document.querySelector("#password-display").style.visibility="hidden";
       document.querySelector("#forge").style.backgroundColor='#FF3232'
-      document.querySelector("#copy").style.backgroundColor='#057072'
+      document.querySelector("#take").style.backgroundColor='#057072'
 
 
     }
@@ -116,7 +123,7 @@ class App extends Component {
                 size='5x'/>
                 <p>pf</p>
             <h1>Pass<wbr/>word Forge</h1>
-            <h4>( artisanal passwords forged from unicorn horns ) </h4>
+            <h4>artisanal passwords forged from unicorn horns</h4>
             <div>
               <div className="Slider">
                 <Slider className="Line"
@@ -163,6 +170,7 @@ class App extends Component {
             </div>
 
             <RaisedButton
+              style={buttonStyle}
               id="forge"
               label="Forge"
               backgroundColor='#FF3232'
@@ -173,13 +181,16 @@ class App extends Component {
 
             <CopyToClipboard text={this.state.password}>
               <RaisedButton
-              id="copy"
-                className="Copy"
-                label="Copy"
-                backgroundColor="#006A6C"
-                labelColor="#7FFFFF"
-                onClick={this.handleCopy.bind(this)}/>
+              style={buttonStyle}
+              id="take"
+              className="Take"
+              label="Take"
+              backgroundColor="#006A6C"
+              labelColor="#7FFFFF"
+              labelFont="Jura"
+              onClick={this.handleCopy.bind(this)}/>
             </CopyToClipboard>&nbsp;
+
 
           </div>
         </MuiThemeProvider>
