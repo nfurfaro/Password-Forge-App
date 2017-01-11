@@ -85,7 +85,7 @@ class App extends Component {
         password: passwordMaker(options, this.state.length)
       });
       document.querySelector("#password-display").style.visibility="visible";
-      document.querySelector("#make").style.backgroundColor='#057072'
+      document.querySelector("#forge").style.backgroundColor='#057072'
       document.querySelector("#copy").style.backgroundColor='#FF3232'
 
     }
@@ -93,7 +93,7 @@ class App extends Component {
     handleCopy() {
       this.setState({copied: true});
       document.querySelector("#password-display").style.visibility="hidden";
-      document.querySelector("#make").style.backgroundColor='#FF3232'
+      document.querySelector("#forge").style.backgroundColor='#FF3232'
       document.querySelector("#copy").style.backgroundColor='#057072'
 
 
@@ -103,13 +103,20 @@ class App extends Component {
       return (
         <MuiThemeProvider>
           <div className="App">
+            <nav>
+            <a href="https://github.com/nfurfaro/Password-Forge-App">
+              <FontAwesome
+                  className='fa fa-github-square'
+                  name='github'
+                  size='2x'/></a>
+            </nav>
             <FontAwesome
                 className='fa-free-code-camp'
                 name='fire'
                 size='5x'/>
                 <p>pf</p>
             <h1>Pass<wbr/>word Forge</h1>
-            <h4>(artisanal passwords forged from unicorn horns) </h4>
+            <h4>( artisanal passwords forged from unicorn horns ) </h4>
             <div>
               <div className="Slider">
                 <Slider className="Line"
@@ -156,8 +163,8 @@ class App extends Component {
             </div>
 
             <RaisedButton
-              id="make"
-              label="Make"
+              id="forge"
+              label="Forge"
               backgroundColor='#FF3232'
               labelColor="#7FFFFF"
               onClick={this.handleMakePassword.bind(this)}></RaisedButton>

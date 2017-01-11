@@ -11,9 +11,25 @@ Basic Setup
   background-position: center;
   height: 100%;
   text-align: center;
-  padding-top: 4%;
-  padding-bottom: 4%;
+  padding-top: 3%;
+  padding-bottom: 5%;
   display: block;
+}
+
+nav {
+  color: #7FFFFF;
+  padding-left: 94%;
+}
+
+a:link,
+a:visited,
+a:focus,
+a:active {
+  color: #7fffff;
+}
+
+a:hover {
+  color: #F54242;
 }
 
 fa-free-code-camp {
