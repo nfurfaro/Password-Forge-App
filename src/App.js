@@ -9,7 +9,13 @@ import Toggle from 'material-ui/Toggle';
 import RaisedButton from 'material-ui/RaisedButton';
 import passwordMaker from 'password-maker';
 import CopyToClipboard from 'react-copy-to-clipboard';
+import logo from './PasswordForgeLogo2.png';
 
+
+// Icon Styles
+const iconStyles = {
+  marginRight: 24,
+};
 
 // Toggle Styles
 
@@ -117,11 +123,7 @@ class App extends Component {
                   name='github'
                   size='2x'/></a>
             </nav>
-            <FontAwesome
-                className='fa-free-code-camp'
-                name='fire'
-                size='5x'/>
-                <p>pf</p>
+            <img src={logo} alt="Logo" width="125px"/>
             <h1>Pass<wbr/>word Forge</h1>
             <h4>artisanal passwords forged from unicorn horns</h4>
             <div>
