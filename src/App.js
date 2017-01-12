@@ -12,10 +12,7 @@ import CopyToClipboard from 'react-copy-to-clipboard';
 import logo from './PasswordForgeLogo2.png';
 
 
-// Icon Styles
-const iconStyles = {
-  marginRight: 24,
-};
+
 
 // Toggle Styles
 
@@ -189,7 +186,6 @@ class App extends Component {
               label="Take"
               backgroundColor="#006A6C"
               labelColor="#7FFFFF"
-              labelFont="Jura"
               onClick={this.handleCopy.bind(this)}/>
             </CopyToClipboard>&nbsp;
 
