@@ -9,6 +9,7 @@ A simple random-password generator with options.
 
 ##Credits:
 
+* Create-React-App (https://github.com/facebookincubator/create-react-app)
 * Material-ui (http://www.material-ui.com/#/)
 * Password-Maker (https://github.com/xsellier/password-maker)
 * react-copy-to-clipboard  (https://www.npmjs.com/package/react-copy-to-clipboard)
