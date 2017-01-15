@@ -137,7 +137,7 @@ class App extends Component {
                     min={4}
                     max={42}
                     step={1}
-                    sliderStyle={sliderStyle}
+                    style={sliderStyle}
                     value={this.state.length}
                     onChange={(e, val) => {
                       this.handleLengthSlider.bind(this)(val)}
