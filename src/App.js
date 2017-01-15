@@ -11,7 +11,11 @@ import CopyToClipboard from 'react-copy-to-clipboard';
 import logo from './PasswordForgeLogo3.svg'
 
 
-
+// Slider Style
+const sliderStyle = {
+  trackColor: '#7FFFFF',
+  trackColorSelected: '#ff3232',
+}
 
 // Toggle Styles
 
@@ -39,6 +43,7 @@ const styles = {
   },
   labelStyle: {
     color: '#7FFFFF',
+    fontFamily: 'Jura, sans-serif',
     fontSize: 25,
     fontWeight: 500,
     letterSpacing: 1.5,
@@ -50,6 +55,10 @@ const styles = {
 const buttonStyle = {
   width: '10%',
 };
+
+const labelStyle = {
+  fontFamily: 'Jura, sans-serif',
+}
 
 
 //------------------------------------------------------------------
@@ -128,6 +137,7 @@ class App extends Component {
                     min={4}
                     max={42}
                     step={1}
+                    sliderStyle={sliderStyle}
                     value={this.state.length}
                     onChange={(e, val) => {
                       this.handleLengthSlider.bind(this)(val)}
@@ -169,6 +179,7 @@ class App extends Component {
 
             <RaisedButton
               style={buttonStyle}
+              labelStyle={labelStyle}
               id="forge"
               label="Forge"
               backgroundColor='#FF3232'
@@ -180,6 +191,7 @@ class App extends Component {
             <CopyToClipboard text={this.state.password}>
               <RaisedButton
               style={buttonStyle}
+              labelStyle={labelStyle}
               id="take"
               className="Take"
               label="Take"
