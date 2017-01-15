@@ -2,9 +2,10 @@
 
 #Password Forge
 
+A simple random-password generator with options.
+
 ![Screenshot](/Screenshot.png?raw=true "Screenshot")
 
-A nice random-password generator with options. Simple to use and easy on the eyes.
 
 ##Credits:
 
