@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import './App.css';
 import FontAwesome from 'react-fontawesome';
 import './resources/fonts/font-awesome-4.7.0/css/font-awesome.min.css'
@@ -12,10 +13,17 @@ import logo from './PasswordForgeLogo3.svg'
 
 
 // Slider Style
-const sliderStyle = {
-  trackColor: '#7FFFFF',
-  trackColorSelected: '#ff3232',
-}
+
+const muiTheme = getMuiTheme({
+  slider: {
+    trackColor: '#F54242',
+    selectionColor: '#7fffff',
+    handleSize: 25,
+    rippleColor: '#7fffff',
+    handleColorZero:'#F54242'
+  },
+});
+
 
 // Toggle Styles
 
@@ -58,6 +66,7 @@ const buttonStyle = {
 
 const labelStyle = {
   fontFamily: 'Jura, sans-serif',
+  fontSize: 22,
 }
 
 
@@ -119,7 +128,7 @@ class App extends Component {
 
     render() {
       return (
-        <MuiThemeProvider>
+        <MuiThemeProvider muiTheme={muiTheme}>
           <div className="App">
             <nav>
             <a href="https://github.com/nfurfaro/Password-Forge-App">
@@ -130,14 +139,14 @@ class App extends Component {
             </nav>
             <img src={logo} alt="Logo" width="125px"/>
             <h1>Pass<wbr/>word Forge</h1>
-            <h4>artisanal passwords forged from unicorn horns</h4>
+            <h4>Artisanal passwords forged from unicorn horns</h4>
             <div>
-              <div className="Slider">
+              <div className="Slider" >
                 <Slider className="Line"
+                    sliderStyle={muiTheme}
                     min={4}
                     max={42}
                     step={1}
-                    style={sliderStyle}
                     value={this.state.length}
                     onChange={(e, val) => {
                       this.handleLengthSlider.bind(this)(val)}
