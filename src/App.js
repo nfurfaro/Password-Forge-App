@@ -8,7 +8,7 @@ import Toggle from 'material-ui/Toggle';
 import RaisedButton from 'material-ui/RaisedButton';
 import passwordMaker from 'password-maker';
 import CopyToClipboard from 'react-copy-to-clipboard';
-import logo from './PasswordForgeLogo2.png';
+import logo from './PasswordForgeLogo3.svg'
 
 
 
@@ -99,7 +99,7 @@ class App extends Component {
 
     }
 
-    handleCopy() {
+    handleTake() {
       this.setState({copied: true});
       document.querySelector("#password-display").style.visibility="hidden";
       document.querySelector("#forge").style.backgroundColor='#FF3232'
@@ -185,7 +185,7 @@ class App extends Component {
               label="Take"
               backgroundColor="#006A6C"
               labelColor="#7FFFFF"
-              onClick={this.handleCopy.bind(this)}/>
+              onClick={this.handleTake.bind(this)}/>
             </CopyToClipboard>&nbsp;
 
 
