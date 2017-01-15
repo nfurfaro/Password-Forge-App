@@ -8,8 +8,9 @@ A nice random-password generator with options. Simple to use and easy on the eye
 
 ##Credits:
 
-*Material-ui (http://www.material-ui.com/#/)
-*Password-Maker (https://github.com/xsellier/password-maker) *react-copy-to-clipboard  (https://www.npmjs.com/package/react-copy-to-clipboard)
+* Material-ui (http://www.material-ui.com/#/)
+* Password-Maker (https://github.com/xsellier/password-maker)
+* react-copy-to-clipboard  (https://www.npmjs.com/package/react-copy-to-clipboard)
 
 
 
