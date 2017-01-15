@@ -13,7 +13,8 @@ A simple random-password generator with options.
 * Password-Maker (https://github.com/xsellier/password-maker)
 * react-copy-to-clipboard  (https://www.npmjs.com/package/react-copy-to-clipboard)
 
+##License
 
-
+[WTFPL](http://www.wtfpl.net/txt/copying/)
 
 
