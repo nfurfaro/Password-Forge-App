@@ -15,6 +15,6 @@ A simple random-password generator with options.
 
 ##License
 
-[WTFPL](http://www.wtfpl.net/txt/copying/)
+[WTFPL](http://www.wtfpl.net/)
 
 
