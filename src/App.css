@@ -52,7 +52,7 @@ h1 {
 h2 {
   font-size: 40px;
   font-weight: 400;
-  padding: 0 0 10px 0;
+  padding: 20px 5px 10px 5px;
   margin: 0 0 20px 0;
   color: #7FFFFF;
 }
@@ -68,7 +68,7 @@ h3 {
 h4 {
   font-size: 30px;
   font-weight: 200;
-  padding: 0px 0;
+  padding: 20px 0;
   margin: 0px 0;
   color: #7FFFFF;
 }
@@ -87,7 +87,7 @@ p {
 
 #password-display {
   margin: 5px 0;
-  padding: 5px 0;
+  padding: 5px 5px;
   min-height: 60px;
   color:  #003535
 }
