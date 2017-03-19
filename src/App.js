@@ -115,7 +115,7 @@ class App extends Component {
       });
       document.querySelector("#password-display").style.visibility="visible";
       document.querySelector("#forge").style.backgroundColor='#057072'
-      document.querySelector("#take").style.backgroundColor='#FF3232'
+      document.querySelector("#copy").style.backgroundColor='#FF3232'
 
     }
 
@@ -123,7 +123,7 @@ class App extends Component {
       this.setState({copied: true});
       document.querySelector("#password-display").style.visibility="hidden";
       document.querySelector("#forge").style.backgroundColor='#FF3232'
-      document.querySelector("#take").style.backgroundColor='#057072'
+      document.querySelector("#copy").style.backgroundColor='#057072'
 
 
     }
@@ -203,9 +203,9 @@ class App extends Component {
               <RaisedButton
               style={buttonStyle}
               labelStyle={labelStyle}
-              id="take"
-              className="Take"
-              label="Take"
+              id="copy"
+              className="Copy"
+              label="Copy"
               backgroundColor="#006A6C"
               labelColor="#7FFFFF"
               onClick={this.handleTake.bind(this)}/>

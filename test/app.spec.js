@@ -62,4 +62,14 @@ describe("Test Suite for App", function() {
     wrapper.setProps({ password: "123abc" });
     expect(wrapper.props().password).to.equal("123abc");
   });
+
+
+  it('simulates click events', () => {
+    const onButtonClick = sinon.spy();
+    const wrapper = mount(<RaisedButton onClick={onButtonClick} />);
+
+    wrapper.find('button').simulate('click');
+    expect(onClick.calledOnce).to.equal(true);
+  });
+
 });
