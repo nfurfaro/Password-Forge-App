@@ -1,17 +1,89 @@
-# See http://help.github.com/ignore-files/ for more about ignoring files.
+# Compiled source #
+###################
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
 
-# dependencies
-node_modules
-Menu.js
+# Packages #
+############
+# it's better to unpack these files and commit the raw source
+# git has its own built in compression methods
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
 
-# testing
+# Logs and databases #
+######################
+*.log
+*.sql
+*.sqlite
+*.bak
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+
+# .*ignore files #
+######################
+
+.gitignore
+webpack.config.js
+.babelrc
+
+# serverless #
+######################
+
+.serverless
+secrets.yml
+serverless.yml
+
+# Other #
+######################
+#app/**
+devNotes.md
+build/**
+DEV
+temp
+temp/**
+temp.*
+**/.tmp
+test
+dist
+build
+*.log
+npm-debug.log
+pids
+*.pid
+*.seed
+lib-cov
 coverage
-# production
-
-
-# misc
+.grunt
+.gulp
+.lock-wscript
+node_modules
+/node_modules
+node_modules/
+**/.idea
 .DS_Store
 .env
-npm-debug.log
-scratchpad.txt
+env.js
+env.yml
+env.json
+admin.env
+
 

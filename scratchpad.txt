@@ -1,0 +1,359 @@
+
+
+
+
+
+
+
+<IconMenu
+      iconButtonElement={<IconButton><MoreVertIcon /></IconButton>}
+      anchorOrigin={{horizontal: 'left', vertical: 'top'}}
+      targetOrigin={{horizontal: 'left', vertical: 'top'}}
+    >
+      <MenuItem primaryText="Refresh" />
+      <MenuItem primaryText="Send feedback" />
+      <MenuItem primaryText="Settings" />
+      <MenuItem primaryText="Help" />
+      <MenuItem primaryText="Sign out" />
+    </IconMenu>
+
+
+
+
+
+
+const copy = require("react-copy-to-clipboard")('')
+    copy(this.state.Password)
+
+
+
+
+render() {
+    return (
+      <div>
+        <input value={this.state.value}
+          onChange={({target: {value}}) => this.setState({value, copied: false})} />&nbsp;
+
+        <CopyToClipboard text={this.state.value}
+          onCopy={() => this.setState({copied: true})}>
+          <span>Copy to clipboard with span</span>
+        </CopyToClipboard>&nbsp;
+
+        <CopyToClipboard text={this.state.value}
+          onCopy={() => this.setState({copied: true})}>
+          <button>Copy to clipboard with button</button>
+        </CopyToClipboard>&nbsp;
+
+        {this.state.copied ? <span style={{color: 'red'}}>Copied.</span> : null}
+      </div>
+    );
+  }
+});
+
+
+
+
+--------------------------------------------------------------
+
+
+var options = {
+    uppercase: this.state.UppercaseToggle,
+    symbols  : this.state.SymbolsToggle,
+    numbers  : this.state.NumbersToggle,
+  };
+
+
+
+
+
+
+A block statement (or compound statement in other languages) is used to group zero or more statements. The block is delimited by a pair of curly brackets and may optionally be labelled:
+
+[label:] {
+  statement_1;
+  statement_2;
+  ...
+  statement_n;
+}
+
+
+[label:] {
+  statement_1;
+  statement_2;
+  ...
+  statement_n;
+}
+variable hoisting?
+
+
+{
+  this.state.Slider
+}
+
+
+
+
+Slider.this.state.Slider  ?
+
+passwordLength=this.state
+
+
+addEventListener("onChange", function() {
+    console.log("You clicked!");
+  });
+----------------------------------------------------
+
+toggle uppercase
+
+
+state.switched ? options.uppercase= true : options.uppercase= false
+state.switched ? options.symbols=   true : options.uppercase= false
+state.switched ? options.numbers=   true : options.uppercase= false
+
+const options = {
+    uppercase: state.switched ? true : false,
+    symbols  : state.switched ? true : false,
+    numbers  : state.switched ? true : false
+  };
+
+
+
+
+ handleToggleUppercase = (event) => {
+    return ! options.uppercase
+  };
+
+
+
+
+const options = {
+    thumbSwitched ? {uppercase: true} : {uppercase: false}
+    symbols  : true,
+    numbers  : true
+  };
+
+
+
+const makePassword = generatePassword(options,4);
+
+
+
+
+
+ thumbSwitched: {
+    backgroundColor: '#BC0000',
+
+
+
+
+
+"The fee is " + (isMember ? "$2.00" : "$10.00")
+
+
+
+
+
+
+
+
+//----------------------------------
+// password
+//----------------------------------
+var generatePassword = require("password-maker");
+
+  // get a 8-character random password
+  var shortPassword = generatePassword(8);
+
+
+  // get a 32-character password with advanced options
+  var options = {
+    uppercase: false,
+    symbols  : false,
+    numbers  : true
+  };
+  var longPassword = generatePassword(options, 32);
+
+
+
+
+
+//----------------------------------
+// Gradient
+//----------------------------------
+
+background: #006163; /* fallback for old browsers */
+background: -webkit-linear-gradient(to top, #006163 , #00e4e8); /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to top, #006163 , #00e4e8); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+//----------------------------------
+//
+//----------------------------------
+
+
+•get font awesome working
+•
+
+
+
+
+*(
+        <FontAwesome
+        className='fa-snowflake-o'
+        name='snowflake'
+        size='2x'
+        />
+    )*/
+
+
+-------------------------------
+slider
+-------------------------------
+
+defaultValue='16
+min= '4'
+max="30"
+step="1"
+
+-----------------------------
+logo
+-----------------------------
+
+class Logo extends Component {
+  render() {
+    return (
+        <FontAwesome
+        className='fa-snowflake-o'
+        name='snowflake'
+        size='5x'
+        />
+    );
+  }
+}
+
+
+-----------------------------------------------------
+.js Functional Code
+-----------------------------------------------------
+
+variables:
+
+    length --> number
+    Letters? --> bool
+    NUmbers? --> bool
+    Symbols? --> bool
+    ----------------------------------------------------
+
+function generatePassword() {
+    var length = 8,
+        charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789",
+        retVal = "";
+    for (var i = 0, n = charset.length; i < length; ++i) {
+        retVal += charset.charAt(Math.floor(Math.random() * n));
+    }
+    return retVal;
+}
+
+---------------------------------------------------------------------
+function generator(plength){
+
+    var keyListAlpha="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    var keyListInt="123456789";
+    var keyListSym="!@#_";
+    var temp='';
+    var len = plength/2;
+    var len = len - 1;
+    var lenspec = plength-len-len;
+
+    for (i=0;i<len;i++)
+        temp+=keyListAlpha.charAt(Math.floor(Math.random()*keyListAlpha.length));
+
+    for (i=0;i<lenspec;i++)
+        temp+=keyListSym.charAt(Math.floor(Math.random()*keyListSym.length));
+
+    for (i=0;i<len;i++)
+        temp+=keyListInt.charAt(Math.floor(Math.random()*keyListInt.length));
+
+        temp=temp.split('').sort(function(){return 0.5-Math.random()}).join('');
+
+    return temp;
+}
+
+
+var keyListAlphaUpper="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+for (i=0;i<len;i++)
+        temp+=keyListAlphaUpper.charAt(Math.floor(Math.random()*keyListAlphaUpper.length));
+---------------------------------------------------------------------
+with lodash >=4.0:
+
+
+var chars = 'abcdefghkmnpqrstuvwxyz23456789';
+function generatePassword(length) {
+  return _.sampleSize(chars, length).join('');
+}
+
+
+interesting how you remove i, l and 1 for readability.
+
+Note, this will only generate passwords upto 30 characters length due to the length of chars. For longer strings resample chars.
+---------------------------------------------------------------------
+
+//for password display:
+render() {
+    return <h2>{this.PasswordMaker({this.state.secondSlider})}</h2>
+
+
+-----------------------------------------------------
+Structure (feature-based)
+-----------------------------------------------------
+
+
+/src
+  /components
+    /Button
+    /Notifications
+      /components
+        /ButtonDismiss
+          /images
+          /locales
+          /specs
+          /index.js
+          /styles.scss
+      /index.js
+      /styles.scss
+  /data
+    /users
+      /actions.js
+      /api.js
+      /reducer.js
+  /scenes
+    /Home
+      /components
+        /ButtonLike
+      /services
+        /processData
+      /index.js
+      /styles.jsx
+    /Sign
+      /components
+        /FormField
+      /scenes
+        /Login
+        /Register
+          /locales
+          /specs
+          /index.js
+          /styles.scss
+  /services
+    /api
+    /geolocation
+    /session
+      /actions.js
+      /index.js
+      /reducer.js
+  index.js
+  store.js
+
+
+
