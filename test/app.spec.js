@@ -1,3 +1,4 @@
+require("babel-register");
 import React from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import { expect } from 'chai';
