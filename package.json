@@ -9,7 +9,9 @@
     "jsdom": "^9.9.1",
     "mocha": "^3.2.0",
     "react-addons-test-utils": "^15.4.2",
-    "react-scripts": "0.8.4"
+    "react-scripts": "0.8.4",
+    "selenium-webdriver": "^3.3.0",
+    "testcafe": "^0.14.0"
   },
   "dependencies": {
     "babel-core": "^6.21.0",
@@ -30,6 +32,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "mocha --require babel-register test/app.spec.js",
+    "test: cafe": "testcafe chrome tests/",
     "eject": "react-scripts eject",
     "dev:hot": "webpack-dev-server --hot --inline --progress --colors --watch --display-error-details --display-cached --content-base ./"
   }
