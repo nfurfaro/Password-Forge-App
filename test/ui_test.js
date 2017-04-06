@@ -25,7 +25,7 @@ test.describe('UI testing', function() {
 //   .then
     // })
     test.it('can forge a password with only lowercase letters', function() {
-        driver.findElement(By.id('forge')).click();
+        driver.findElement(By.id('frog')).click();
         driver.findElement(By.id('password-display')).getText()
             .then(function(text) {
                 console.log(`Forged password is ${text}`);
