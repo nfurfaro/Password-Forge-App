@@ -2,7 +2,7 @@
 
 #Password Forge
 
-A simple random-password generator with options.
+A simple random-password generator.
 
 ![Screenshot](/Screenshot.png?raw=true "Screenshot")
 
