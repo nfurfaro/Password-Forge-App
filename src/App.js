@@ -143,7 +143,7 @@ class App extends Component {
             <h1>Pass<wbr/>word Forge</h1>
             <h4>Artisanal passwords forged from unicorn horns</h4>
             <div>
-              <div className="Slider" >
+              <div className="Slider" id="slider" >
                 <Slider className="Line"
                     sliderStyle={muiTheme}
                     min={4}
@@ -157,6 +157,7 @@ class App extends Component {
               <h2>{`Password Length: ${this.state.length}`}</h2>
               <div className="Toggles" style={styles.block}>
                 <Toggle
+                  id="uppercase"
                   label="Uppercase"
                   thumbStyle={styles.thumbOff}
                   trackStyle={styles.trackOff}
@@ -167,6 +168,7 @@ class App extends Component {
                   onToggle={this.handleToggleUppercase.bind(this)} />
 
                 <Toggle
+                  id="symbols"
                   label="Symbols"
                   thumbStyle={styles.thumbOff}
                   trackStyle={styles.trackOff}
@@ -177,6 +179,7 @@ class App extends Component {
                   onToggle={this.handleToggleSymbols.bind(this)} />
 
                 <Toggle
+                  id="numbers"
                   label="Numbers"
                   thumbStyle={styles.thumbOff}
                   trackStyle={styles.trackOff}

@@ -3,15 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
-    "babel-register": "^6.24.0",
+    "chromedriver": "^2.28.0",
     "enzyme": "^2.7.0",
     "ignore-styles": "^5.0.1",
     "jsdom": "^9.9.1",
     "mocha": "^3.2.0",
     "react-addons-test-utils": "^15.4.2",
     "react-scripts": "0.8.4",
-    "selenium-webdriver": "^3.3.0",
-    "testcafe": "^0.14.0"
+    "selenium-webdriver": "^3.3.0"
   },
   "dependencies": {
     "babel-core": "^6.21.0",

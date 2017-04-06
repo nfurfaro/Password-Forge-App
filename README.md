@@ -2,21 +2,20 @@
 
 #Password Forge
 
-A simple random-password generator with options.
+A simple random-password generator.
 
 ![Screenshot](/Screenshot.png?raw=true "Screenshot")
 
 ##Motivation
-This is primarily a learning project for me. It was undertaken as a way to explore javascript, react and and web app development in general.
+This is primarily a learning project for me. It was undertaken as a way to explore javascript, react and web app development in general.
 
 ##Tests
 
-Testing is a work in progress for this project, and uses Enzyme, Mocha and Chai. Sinon will also be added in future tests.
+Testing is a work-in-progress for this project, and uses Selenium-webdriver, Mocha and Chai. The tests run on codeship as part of my continuous-deployment pipeline.
 
-* Enzyme (http://airbnb.io/enzyme/index.html)
+* Selenium-Webdriver(http://www.seleniumhq.org/)
 * Mocha (https://mochajs.org/)
 * Chai (http://chaijs.com/)
-* Sinon (http://sinonjs.org/)
 
 ##Credits:
 
@@ -27,4 +26,4 @@ Testing is a work in progress for this project, and uses Enzyme, Mocha and Chai.
 
 ##License
 
-[WTFPL](http://www.wtfpl.net/)
+[the Unlicense](http://unlicense.org)
