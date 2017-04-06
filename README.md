@@ -11,7 +11,7 @@ This is primarily a learning project for me. It was undertaken as a way to explo
 
 ##Tests
 
-Testing is a work in progress for this project, and uses Enzyme, Mocha and Chai. Currently working to set up selenium-webdriver as well.
+Testing is a work in progress for this project, and uses Selenium-webdriver, Mocha and Chai. Currently working to set up selenium-webdriver as well.
 
 * Enzyme (http://airbnb.io/enzyme/index.html)
 * Mocha (https://mochajs.org/)
