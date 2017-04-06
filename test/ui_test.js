@@ -8,7 +8,7 @@ var driver = new selenium.Builder()
             .forBrowser('chrome')
             .build();
 
-var timeOut = 30000;
+var timeOut = 180000;
 
 test.describe('UI testing', function() {
     this.timeout(timeOut);
