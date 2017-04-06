@@ -11,7 +11,7 @@ This is primarily a learning project for me. It was undertaken as a way to explo
 
 ##Tests
 
-Testing is a work in progress for this project, and uses Selenium-webdriver, Mocha and Chai.
+Testing is a work-in-progress for this project, and uses Selenium-webdriver, Mocha and Chai.
 
 * Selenium-Webdriver(http://www.seleniumhq.org/)
 * Mocha (https://mochajs.org/)
