@@ -26,4 +26,4 @@ Testing is a work in progress for this project, and uses Selenium-webdriver, Moc
 
 ##License
 
-[WTFPL](http://www.wtfpl.net/)
+[the Unlicense](http://unlicense.org)
