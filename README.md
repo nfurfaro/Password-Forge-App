@@ -7,7 +7,7 @@ A simple random-password generator with options.
 ![Screenshot](/Screenshot.png?raw=true "Screenshot")
 
 ##Motivation
-This is primarily a learning project for me. It was undertaken as a way to explore javascript, react and and web app development in general.
+This is primarily a learning project for me. It was undertaken as a way to explore javascript, react and web app development in general.
 
 ##Tests
 
