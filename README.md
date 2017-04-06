@@ -11,12 +11,11 @@ This is primarily a learning project for me. It was undertaken as a way to explo
 
 ##Tests
 
-Testing is a work in progress for this project, and uses Selenium-webdriver, Mocha and Chai. Currently working to set up selenium-webdriver as well.
+Testing is a work in progress for this project, and uses Selenium-webdriver, Mocha and Chai.
 
-* Enzyme (http://airbnb.io/enzyme/index.html)
+* Selenium-Webdriver(http://www.seleniumhq.org/)
 * Mocha (https://mochajs.org/)
 * Chai (http://chaijs.com/)
-* Sinon (http://sinonjs.org/)
 
 ##Credits:
 
