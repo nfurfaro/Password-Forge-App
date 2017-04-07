@@ -3,8 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
+    "babel-eslint": "^7.2.1",
     "chromedriver": "^2.28.0",
     "enzyme": "^2.7.0",
+    "eslint": "^3.14.1",
+    "eslint-config-standard": "^6.2.1",
+    "eslint-config-standard-react": "^4.2.0",
+    "eslint-plugin-babel": "^4.0.1",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^3.0.2",
+    "eslint-plugin-promise": "^3.4.0",
+    "eslint-plugin-react": "^6.9.0",
+    "eslint-plugin-standard": "^2.0.1",
     "ignore-styles": "^5.0.1",
     "jsdom": "^9.9.1",
     "mocha": "^3.2.0",
@@ -31,7 +41,6 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "mocha --require babel-register test/app.spec.js",
-    "test: cafe": "testcafe chrome tests/",
     "eject": "react-scripts eject",
     "dev:hot": "webpack-dev-server --hot --inline --progress --colors --watch --display-error-details --display-cached --content-base ./"
   }
